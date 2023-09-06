@@ -1,9 +1,13 @@
-import Image from "next/image";
+import Hero from "@/components/Hero/Hero";
+import Categories from "@/components/HomePageMain/Categories";
+import Products from "@/components/HomePageMain/Products";
 
-const Home = () => {
+const Home = async () => {
   return (
     <>
-      <h1>hi mum</h1>
+      <Hero />
+      <Categories />
+      <Products />
     </>
   );
 };
