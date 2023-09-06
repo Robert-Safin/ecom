@@ -42,7 +42,7 @@ const Hero = () => {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <button className="bg-orange-400 py-3 px-8 text-white text-sm rounded-sm">
+          <button className="bg-orange-400 hover:bg-orange-300 py-3 px-8 text-white text-sm rounded-sm">
             {" "}
             SEE PRODUCT
           </button>

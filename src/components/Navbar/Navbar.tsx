@@ -41,25 +41,25 @@ const Navbar: FC<Props> = (props) => {
 
         <div className="hidden lg:flex  space-x-8 pr-3">
           <Link
-            href=""
+            href="/"
             className="text-white text-sm tracking-[1.5px] hover:text-orange-500 cursor-pointer"
           >
             HOME
           </Link>
           <Link
-            href=""
+            href="/headphones"
             className="text-white text-sm tracking-[1.5px] hover:text-orange-500 cursor-pointer"
           >
             HEADPHONES
           </Link>
           <Link
-            href=""
+            href="/speakers"
             className="text-white text-sm tracking-[1.5px] hover:text-orange-500 cursor-pointer"
           >
             SPEAKERS
           </Link>
           <Link
-            href=""
+            href="/earphones"
             className="text-white text-sm tracking-[1.5px] hover:text-orange-500 cursor-pointer"
           >
             EARPHONES
@@ -73,7 +73,10 @@ const Navbar: FC<Props> = (props) => {
 
       {menuIsOpen && (
         <div className="flex flex-col bg-white pt-10 absolute w-full z-20 border h-full md:h-auto md:flex-row md:justify-evenly rounded-b-lg lg:hidden lg:shadow-2xl">
-          <div className="bg-gray-100 m-4 pt-16 p-4 rounded-md flex flex-col items-center justify-center align-middle relative shadow-xl hover:border-orange-500 border md:w-full my-14 md:my-8 ">
+          <Link onClick={()=>setMenuIsOpen(false)}
+            href="/headphones"
+            className="bg-gray-100 m-4 pt-16 p-4 rounded-md flex flex-col items-center justify-center align-middle relative shadow-xl hover:border-orange-500 border md:w-full my-14 md:my-8 "
+          >
             <Image
               className="w-32 h-32 absolute bottom-14 object-cover"
               src="/image-headphones.png"
@@ -82,12 +85,15 @@ const Navbar: FC<Props> = (props) => {
               height={1000}
             />
             <h2>HEADPHONES</h2>
-            <Link href="" className="flex items-center pt-4">
+            <div className="flex items-center pt-4">
               <p className="text-gray-500 text-sm">SHOP</p>
               <MdOutlineNavigateNext className="text-orange-500 w-5 h-5" />
-            </Link>
-          </div>
-          <div className="bg-gray-100 m-4 pt-16 p-4 rounded-md flex flex-col items-center justify-center align-middle relative shadow-xl hover:border-orange-500 border md:w-full my-14 md:my-8">
+            </div>
+          </Link>
+          <Link onClick={()=>setMenuIsOpen(false)}
+            href="/speakers"
+            className="bg-gray-100 m-4 pt-16 p-4 rounded-md flex flex-col items-center justify-center align-middle relative shadow-xl hover:border-orange-500 border md:w-full my-14 md:my-8"
+          >
             <Image
               className="w-32 h-32 absolute bottom-14 object-cover"
               src="/image-speakers.png"
@@ -96,12 +102,15 @@ const Navbar: FC<Props> = (props) => {
               height={1000}
             />
             <h2>SPEAKERS</h2>
-            <Link href="" className="flex items-center pt-4">
+            <div className="flex items-center pt-4">
               <p className="text-gray-500 text-sm">SHOP</p>
               <MdOutlineNavigateNext className="text-orange-500 w-5 h-5" />
-            </Link>
-          </div>
-          <div className="bg-gray-100 m-4 pt-16 p-4 rounded-md flex flex-col items-center justify-center align-middle relative shadow-xl hover:border-orange-500 border md:w-full my-14 md:my-8">
+            </div>
+          </Link>
+          <Link onClick={()=>setMenuIsOpen(false)}
+            href="/earphones"
+            className="bg-gray-100 m-4 pt-16 p-4 rounded-md flex flex-col items-center justify-center align-middle relative shadow-xl hover:border-orange-500 border md:w-full my-14 md:my-8"
+          >
             <Image
               className="w-32 h-32 absolute bottom-14 object-cover"
               src="/image-earphones.png"
@@ -110,11 +119,11 @@ const Navbar: FC<Props> = (props) => {
               height={1000}
             />
             <h2>EARPHONES</h2>
-            <Link href="" className="flex items-center pt-4">
+            <div className="flex items-center pt-4">
               <p className="text-gray-500 text-sm">SHOP</p>
               <MdOutlineNavigateNext className="text-orange-500 w-5 h-5" />
-            </Link>
-          </div>
+            </div>
+          </Link>
         </div>
       )}
     </div>
