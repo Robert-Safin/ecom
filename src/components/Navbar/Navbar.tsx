@@ -8,7 +8,7 @@ import Link from "next/link";
 import { MdOutlineNavigateNext } from "react-icons/md";
 import Image from "next/image";
 interface Props {
-  readClientCartId: (cartId: number) => Promise<CartType>;
+  readClientCartId: (cartId: number) => Promise<any>;
 }
 
 const Navbar: FC<Props> = (props) => {

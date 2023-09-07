@@ -25,18 +25,21 @@ const readClientCartId = async (cartId: number) => {
 
   if (cartId === 0) {
     const id = await kv.incr("cartId");
-    await kv.set<CartType>(`cart-${id}`, {
-      id,
-      items: [],
+    await kv.hset(`cart:${id}`, {
+      id: id,
     });
-    const newCart = await kv.get<CartType>(`cart-${id}`);
+    const newCart = await kv.hgetall(`cart:${id}`);
     return newCart!;
   } else {
-    await kv.get<CartType>(`cart-${cartId}`);
-    const cart = await kv.get<CartType>(`cart-${cartId}`);
+
+    const cart = await kv.hgetall(`cart:${cartId}`);
     return cart!;
   }
 };
+
+const generateRandomNumber = () => {
+  return Math.floor(Math.random() * 1000);
+}
 
 const RootLayout: FC<Props> = async (props) => {
   return (

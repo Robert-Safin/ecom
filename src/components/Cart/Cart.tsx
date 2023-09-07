@@ -4,9 +4,10 @@ import { FC, useEffect, useState } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import Modal from "react-modal";
 
-//Modal.setAppElement("#root");
+Modal.setAppElement(document.getElementById("root")!);
+
 interface Props {
-  readClientCartId: (cartId: number) => Promise<CartType>;
+  readClientCartId: (cartId: number) => Promise<any>;
 }
 
 const Cart: FC<Props> = (props) => {
@@ -29,18 +30,20 @@ const Cart: FC<Props> = (props) => {
     })();
   }, [props]);
 
+
   return (
     <>
       <AiOutlineShoppingCart
         className="w-6 h-6 text-white"
         onClick={() => setIsOpen(true)}
       />
-      {cart && cart!.items.length > 0 && (
-        <p className="absolute top-4 right-2 text-xs bg-orange-500 text-white px-1 rounded-full">
-          {cart?.items.length}
+      {cart && (
+        <p className="absolute top-6 right-2 text-xs bg-orange-500 text-white px-1 rounded-full">
+          {Object.keys(cart!).filter((key) => key !== "id").length}
         </p>
       )}
-      {/* <Modal
+      <Modal
+        ariaHideApp={false}
         isOpen={modalIsOpen}
         onRequestClose={() => setIsOpen(false)}
         shouldFocusAfterRender={false}
@@ -48,15 +51,19 @@ const Cart: FC<Props> = (props) => {
         style={{ overlay: { backgroundColor: "rgba(0,0,0,0.5)" } }}
       >
         <div className="w-full mx-auto py-4">
-          {cart && cart!.items.length === 0 && (
-            <p className="text-center text-gray-400 text-xl">
-              Your cart is empty
-              <AiOutlineShoppingCart className="w-24 h-24 text-black text-center mx-auto mt-4 font-light" />
-            </p>
-          )}
+          {cart &&
+            Object.keys(cart!).filter((key) => key !== "id").length === 0 && (
+              <p className="text-center text-gray-400 text-xl">
+                Your cart is empty
+                <AiOutlineShoppingCart className="w-24 h-24 text-black text-center mx-auto mt-4 font-light" />
+              </p>
+            )}
+          {cart &&
+            Object.keys(cart!).filter((key) => key !== "id").length !== 0 && (
+              <p className="text-center text-gray-400 text-xl">items</p>
+            )}
         </div>
-        <p>{JSON.stringify(cart)}</p>
-      </Modal> */}
+      </Modal>
     </>
   );
 };
