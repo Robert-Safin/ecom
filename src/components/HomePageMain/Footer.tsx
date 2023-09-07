@@ -14,10 +14,30 @@ const Footer = () => {
             NAME
           </h1>
           <div className="flex flex-col space-y-4 text-sm items-center sm:flex-row sm:space-y-0 sm:space-x-8">
-            <Link href="" className="tracking-[1px] hover:text-orange-400 cursor-pointer">HOME</Link>
-            <Link href="" className="tracking-[1px] hover:text-orange-400 cursor-pointer">HEADPHONES</Link>
-            <Link href="" className="tracking-[1px] hover:text-orange-400 cursor-pointer">SPEAKERS</Link>
-            <Link href="" className="tracking-[1px] hover:text-orange-400 cursor-pointer">EARPHONES</Link>
+            <Link
+              href="/"
+              className="tracking-[1px] hover:text-orange-400 cursor-pointer"
+            >
+              HOME
+            </Link>
+            <Link
+              href="/headphones"
+              className="tracking-[1px] hover:text-orange-400 cursor-pointer"
+            >
+              HEADPHONES
+            </Link>
+            <Link
+              href="/speakers"
+              className="tracking-[1px] hover:text-orange-400 cursor-pointer"
+            >
+              SPEAKERS
+            </Link>
+            <Link
+              href="/earphones"
+              className="tracking-[1px] hover:text-orange-400 cursor-pointer"
+            >
+              EARPHONES
+            </Link>
           </div>
         </div>
 
@@ -45,24 +65,22 @@ const Footer = () => {
           demo facility - we`re open 7 days a week.
         </p>
 
-
-
         <div className="hidden sm:flex items-center justify-between w-full">
-
           <p className="text-xs text-gray-400 text-center sm:text-left">
-            Copyright 2021. All Rights Reserved
+            Copyright 2023. All Rights Reserved
           </p>
           <div className="flex space-x-4 justify-center">
-            <AiFillFacebook className="text-3xl  hover:text-orange-400 cursor-pointer" />
-            <AiOutlineInstagram className="text-3xl  hover:text-orange-400 cursor-pointer" />
-            <AiOutlineTwitter className="text-3xl  hover:text-orange-400 cursor-pointer" />
+            <Link href="https://www.facebook.com/" target="_blank">
+              <AiFillFacebook className="text-3xl  hover:text-orange-400 cursor-pointer" />
+            </Link>
+            <Link href="https://www.instagram.com/" target="_blank">
+              <AiOutlineInstagram className="text-3xl  hover:text-orange-400 cursor-pointer" />
+            </Link>
+            <Link href="https://twitter.com/" target="_blank">
+              <AiOutlineTwitter className="text-3xl  hover:text-orange-400 cursor-pointer" />
+            </Link>
           </div>
-
         </div>
-
-
-
-
       </div>
     </div>
   );

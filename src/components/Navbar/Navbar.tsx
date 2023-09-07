@@ -30,14 +30,14 @@ const Navbar: FC<Props> = (props) => {
               onClick={() => setMenuIsOpen(!menuIsOpen)}
             />
           )}
-          <h1 className="hidden md:block text-3xl font-bold tracking-wider text-white pl-4">
+          <Link href="/" className="hidden md:block text-3xl font-bold tracking-wider text-white pl-4">
             Name
-          </h1>
+          </Link>
         </div>
 
-        <h1 className="text-3xl font-bold tracking-wider text-white md:hidden lg:block">
+        <Link href="/" className="text-3xl font-bold tracking-wider text-white md:hidden lg:block">
           Name
-        </h1>
+        </Link>
 
         <div className="hidden lg:flex  space-x-8 pr-3">
           <Link

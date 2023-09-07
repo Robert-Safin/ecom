@@ -10,8 +10,7 @@ const Home = async () => {
       <Hero />
       <Categories />
       <Products />
-      <About/>
-      <Footer/>
+
     </>
   );
 };

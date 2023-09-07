@@ -5,6 +5,8 @@ import Navbar from "../components/Navbar/Navbar";
 import { FC } from "react";
 import { CartType } from "@/types/Cart";
 import { kv } from "@vercel/kv";
+import About from "@/components/HomePageMain/About";
+import Footer from "@/components/HomePageMain/Footer";
 
 const rubik = Rubik({ subsets: ["latin"] });
 
@@ -36,15 +38,17 @@ const readClientCartId = async (cartId: number) => {
   }
 };
 
-const RootLayout:FC<Props> = async(props)=> {
+const RootLayout: FC<Props> = async (props) => {
   return (
-    <html lang="en">
-      <body className={rubik.className}>
-        <Navbar readClientCartId={readClientCartId}/>
+    <html lang="en" id="root">
+      <body className={rubik.className} >
+        <Navbar readClientCartId={readClientCartId} />
         {props.children}
+        <About />
+        <Footer />
       </body>
     </html>
   );
-}
+};
 
 export default RootLayout;
