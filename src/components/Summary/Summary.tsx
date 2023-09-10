@@ -120,15 +120,17 @@ const Summary: FC<Props> = (props) => {
           $ {(total + 50 + Math.round(total * 0.15)).toLocaleString()}
         </p>
       </div>
-      {cart && (
+      {cart && Object.keys(cart).length > 0 && (
         <button
-          onClick={() => setModal(true)}
+          onClick={() => {
+            setModal(true);
+          }}
           className="bg-orange-400 py-3 px-8 text-white text-sm rounded-sm my-4 w-full "
         >
           CONTINUE & PAY
         </button>
       )}
-      {!cart && (
+      {cart && Object.keys(cart).length === 0 && (
         <button
           disabled={true}
           className="bg-orange-100 py-3 px-8 text-white text-sm rounded-sm my-4 w-full"
@@ -193,8 +195,10 @@ const Summary: FC<Props> = (props) => {
               </div>
             </div>
           </div>
-          <Link href={'/'} className="border w-full ">
-            <button className="bg-orange-400 w-full py-3 px-8 text-white mt-4 rounded-sm">BACK TO HOME</button>
+          <Link href={"/"} className="border w-full">
+            <button className="bg-orange-400 w-full py-3 px-8 text-white mt-4 rounded-sm">
+              BACK TO HOME
+            </button>
           </Link>
         </div>
       </PureModal>
