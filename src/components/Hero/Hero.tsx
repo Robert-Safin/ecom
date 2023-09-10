@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <div className="bg-primary -z-10 pb-4">
+    <div className="bg-[rgb(25,25,25)] -z-10 pb-4">
       <div
         className="max-w-[1110px] mx-auto h-[600px]
     flex flex-col items-center justify-center
