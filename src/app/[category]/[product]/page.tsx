@@ -2,9 +2,10 @@ import AddItems from "@/components/AddItems/AddItems";
 import YouMayAlsoLike from "@/components/YouMayAlsoLike/YouMayAlsoLike";
 import { Product } from "@/redis/resdis";
 import { kv } from "@vercel/kv";
+
 import Image from "next/image";
 import { FC } from "react";
-
+import { redirect } from "next/navigation";
 interface Props {
   params: {
     category: string;
@@ -38,8 +39,8 @@ const ProductPage: FC<Props> = async (props) => {
     cartId: number
   ) => {
     "use server";
-    // console.log(quantity, product.name, cartId);
     await kv.hset(`cart:${cartId}`, { [product.name]: quantity });
+    redirect('/checkout')
   };
 
   return (

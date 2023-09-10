@@ -37,14 +37,12 @@ const readClientCartId = async (cartId: number) => {
   }
 };
 
-const generateRandomNumber = () => {
-  return Math.floor(Math.random() * 1000);
-}
+
 
 const RootLayout: FC<Props> = async (props) => {
   return (
-    <html lang="en" id="root">
-      <body className={rubik.className} >
+    <html lang="en">
+      <body className={rubik.className}>
         <Navbar readClientCartId={readClientCartId} />
         {props.children}
         <About />
