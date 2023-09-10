@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="max-w-[1100px] mx-auto p-4 text-white flex flex-col items-center sm:items-start">
         <div className="md:flex md:w-full md:justify-between">
           <h1 className="flex flex-row text-3xl font-bold tracking-wider my-8">
-            NAME
+            AUDIO
           </h1>
           <div className="flex flex-col space-y-4 text-sm items-center sm:flex-row sm:space-y-0 sm:space-x-8">
             <Link

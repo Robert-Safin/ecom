@@ -37,7 +37,7 @@ const Navbar: FC<Props> = (props) => {
               href="/"
               className="hidden md:block text-3xl font-bold tracking-wider text-white pl-4"
             >
-              Name
+              audio
             </Link>
           </div>
 
@@ -45,7 +45,7 @@ const Navbar: FC<Props> = (props) => {
             href="/"
             className="text-3xl font-bold tracking-wider text-white md:hidden lg:block"
           >
-            Name
+            audio
           </Link>
 
           <div className="hidden lg:flex  space-x-8 pr-3">
